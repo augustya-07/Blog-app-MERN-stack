@@ -23,7 +23,18 @@ copy client\.env.example client\.env
 MONGO_URI=mongodb+srv://...
 ```
 
-4. Run the app:
+4. For uploaded images that work across phones, other PCs, and production deploys, add Cloudinary credentials in `server/.env`:
+
+```env
+CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+CLOUDINARY_FOLDER=inkspire-blog
+```
+
+If these are empty, the app falls back to local `server/uploads` storage for development.
+
+5. Run the app:
 
 ```bash
 npm run dev
